@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'io.fabric'
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -23,6 +25,9 @@ android {
 }
 
 dependencies {
+    compile('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
+        transitive = true;
+    }
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
